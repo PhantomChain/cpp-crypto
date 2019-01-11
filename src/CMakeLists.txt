@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.2.2)
 
-project(Ark-Cpp-Crypto-lib C CXX)
+project(Phantom-Cpp-Crypto-lib C CXX)
 
 add_subdirectory(lib/bip39/src)
 

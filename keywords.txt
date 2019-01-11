@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-ARK	KEYWORD1
+PHANTOM	KEYWORD1
 
 API	KEYWORD1
 Utilities	KEYWORD1

@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,7 @@
  * @param const int type
  * @return uint64_t
  **/
-uint64_t Ark::Crypto::Configuration::Fee::get(int type)
+uint64_t Phantom::Crypto::Configuration::Fee::get(int type)
 {
     return this->fees_[type];
 };
@@ -27,7 +27,7 @@ uint64_t Ark::Crypto::Configuration::Fee::get(int type)
  * @param const int type
  * @param const uint64_t fee
  **/
-void Ark::Crypto::Configuration::Fee::set(
+void Phantom::Crypto::Configuration::Fee::set(
         const int type,
         const uint64_t fee
 ) {

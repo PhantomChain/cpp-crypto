@@ -30,4 +30,4 @@ then run the following commands:
 #
 
 ### run tests
-> `./bin/Ark-Cpp-Crypto-tests`
+> `./bin/Phantom-Cpp-Crypto-tests`

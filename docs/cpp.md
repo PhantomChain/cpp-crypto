@@ -5,7 +5,7 @@ title: "Cpp"
 # Cpp
 
 ::: warning
-This project is still under development. This page will get more content as the project evolves. In the meantime you can view its source on [Github](https://github.com/ArkEcosystem/cpp-crypto/).
+This project is still under development. This page will get more content as the project evolves. In the meantime you can view its source on [Github](https://github.com/PhantomChain/cpp-crypto/).
 :::
 
 [[toc]]
@@ -23,7 +23,7 @@ This project is still under development. This page will get more content as the 
 const auto text = "Computer science is no more about computers than astronomy is about telescopes.";
 const auto passphrase = "viable weasel wage promote praise inflict jaguar tackle color unusual exclude direct";
 
-Ark::Crypto::Utils::Message message;
+Phantom::Crypto::Utils::Message message;
 message.sign(text, passphrase);
 ```
 
@@ -46,7 +46,7 @@ message.sign(text, passphrase);
 ```cpp
 const auto text = "Computer science is no more about computers than astronomy is about telescopes.";
 const auto passphrase = "bullet parade snow bacon mutual deposit brass floor staff list concert ask";
-Ark::Crypto::Utils::Message message;
+Phantom::Crypto::Utils::Message message;
 message.sign(text, passphrase);
 ```
 
@@ -57,7 +57,7 @@ const auto text = "Computer science is no more about computers than astronomy is
 PublicKey publicKey = PublicKey::fromHex("0275776018638e5c40f1b922901e96cac2caa734585ef302b4a2801ee9a338a456");
 std::vector<uint8_t> signature = HexToBytes("3044022021704f2adb2e4a10a3ddc1d7d64552b8061c05f6d12a168c69091c75581d611402200edf37689d2786fc690af9f0f6fa1f629c95695039f648a6d455484302402e93");
 
-Ark::Crypto::Utils::Message message(
+Phantom::Crypto::Utils::Message message(
     text,
     publicKey,
     signature
@@ -72,12 +72,12 @@ message.verify();
 
 #### Generate a default passphrase with 12 words in English
 ```cpp
-const auto passphrase = Ark::Crypto::Identies::Mnemonic::generate();
+const auto passphrase = Phantom::Crypto::Identies::Mnemonic::generate();
 ```
 
 #### Generate a passphrase with the given language and 24 words
 ```cpp
-const auto passphrase = Ark::Crypto::Identies::Mnemonic::generate(24, Ark::Crypto::Identies::Language::en);
+const auto passphrase = Phantom::Crypto::Identies::Mnemonic::generate(24, Phantom::Crypto::Identies::Language::en);
 ```
 
 ### Address
@@ -165,7 +165,7 @@ install the following Libraries:
 #### Arduino Example using the Adafruit Feather ESP8266
 
 ```cpp
-#include "arkCrypto.h"
+#include "phantomCrypto.h"
 
 void setup()
 {
@@ -189,7 +189,7 @@ void setup()
     Serial.println(wif.toString().c_str());
 
 
-    const auto actual = Ark::Crypto::Transactions::Builder::buildTransfer(
+    const auto actual = Phantom::Crypto::Transactions::Builder::buildTransfer(
             "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
             100000000,
             "",
@@ -199,7 +199,7 @@ void setup()
 
 
     const auto text = "Computer science is no more about computers than astronomy is about telescopes.";
-    Ark::Crypto::Utils::Message message;
+    Phantom::Crypto::Utils::Message message;
     message.sign(text, passphrase);
     Serial.println(BytesToHex(message.signature).c_str());
 }
@@ -263,7 +263,7 @@ using
     cmake . && cmake --build .
 
 ### run tests (Linux, macOS)
-    ./test/Ark-Cpp-Crypto-tests
+    ./test/Phantom-Cpp-Crypto-tests
 
 ### run tests (Windows)
-    .\test\Debug\Ark-Cpp-Crypto-tests.exe
+    .\test\Debug\Phantom-Cpp-Crypto-tests.exe

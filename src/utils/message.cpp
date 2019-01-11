@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,7 +16,7 @@
  * @param PublicKey pubKey
  * @param std::vector<uint8_t> sig
  **/
-Ark::Crypto::Utils::Message::Message(
+Phantom::Crypto::Utils::Message::Message(
         std::string msg,
         PublicKey pubKey,
         std::vector<uint8_t> sig
@@ -34,17 +34,17 @@ Ark::Crypto::Utils::Message::Message(
  *
  * @return bool
  **/
-bool Ark::Crypto::Utils::Message::sign(
+bool Phantom::Crypto::Utils::Message::sign(
         std::string newMessage,
         const char *const passphrase
 ) {
     this->message = newMessage;
 
     /* Get the PrivateKey */
-    PrivateKey privateKey = Ark::Crypto::Identities::PrivateKey::fromPassphrase(passphrase);
+    PrivateKey privateKey = Phantom::Crypto::Identities::PrivateKey::fromPassphrase(passphrase);
 
     /* Set the PublicKey from the derived PrivateKey */
-    this->publicKey = Ark::Crypto::Identities::PublicKey::fromPrivateKey(privateKey);
+    this->publicKey = Phantom::Crypto::Identities::PublicKey::fromPrivateKey(privateKey);
 
     /* Get the Hash */
     const auto unsignedMessage = reinterpret_cast<const unsigned char*>(message.c_str());
@@ -62,7 +62,7 @@ bool Ark::Crypto::Utils::Message::sign(
  *
  * @return bool
  **/
-bool Ark::Crypto::Utils::Message::verify()
+bool Phantom::Crypto::Utils::Message::verify()
 {
     const auto unsignedMessage = reinterpret_cast<const unsigned char*>(this->message.c_str()); // cast message to unsigned char*
     const auto hash = Sha256::getHash(unsignedMessage, this->message.length());
@@ -80,7 +80,7 @@ bool Ark::Crypto::Utils::Message::verify()
  *
  * @return std::vector< std::pair<const char *const, std::string> >
  **/
-std::vector<std::pair<const char *const, std::string>> Ark::Crypto::Utils::Message::toArray()
+std::vector<std::pair<const char *const, std::string>> Phantom::Crypto::Utils::Message::toArray()
 {
     return {
         { "publickey", this->publicKey.toString().c_str() },
@@ -99,7 +99,7 @@ std::vector<std::pair<const char *const, std::string>> Ark::Crypto::Utils::Messa
  *
  * @return std::string
  **/
-std::string Ark::Crypto::Utils::Message::toJson()
+std::string Phantom::Crypto::Utils::Message::toJson()
 {
     const auto messageArray = this->toArray();
 
@@ -133,7 +133,7 @@ std::string Ark::Crypto::Utils::Message::toJson()
  *
  * @return std::string
  **/
-std::string Ark::Crypto::Utils::Message::toString()
+std::string Phantom::Crypto::Utils::Message::toString()
 {
     return this->toJson();
 };

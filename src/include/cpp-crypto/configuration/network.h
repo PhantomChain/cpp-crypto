@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -17,11 +17,11 @@
 
 #include <vector>
 
-namespace Ark {
+namespace Phantom {
 namespace Crypto {
 namespace Configuration {
 
-using namespace Ark::Crypto::Networks;
+using namespace Phantom::Crypto::Networks;
 
 /**
  * @brief This is the network configuration class.

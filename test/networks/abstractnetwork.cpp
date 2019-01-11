@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "networks/abstractnetwork.h"
-using namespace Ark::Crypto::Networks;
+using namespace Phantom::Crypto::Networks;
 
 #include <string>
 

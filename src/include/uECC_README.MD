@@ -1,7 +1,7 @@
 
 # Desktop Platforms
 if building for a desktop platform (mac, windows, linux),  
-be sure to update your git submodules using the following command from the `Ark-Cpp` folder.
+be sure to update your git submodules using the following command from the `Phantom-Cpp` folder.
 
 ```
 git submodule init && git submodule update

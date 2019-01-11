@@ -23,7 +23,7 @@ install the following Libraries
 ### Using with the Arduino IDE
 > include the following header in your Arduino Sketch:  
 ```cpp
-#include <arkCrypto.h>
+#include <phantomCrypto.h>
 ```
 
 #
@@ -31,7 +31,7 @@ install the following Libraries
 ### Arduino Example using the Adafruit Feather ESP8266
 
 ```cpp
-#include "arkCrypto.h"
+#include "phantomCrypto.h"
 
 void setup()
 {
@@ -53,12 +53,12 @@ void setup()
   Serial.println(wif.toString().c_str());
 
 
-  const auto actual = Ark::Crypto::Transactions::Builder::buildTransfer("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", 100000000, "", "Secret passphrase");
+  const auto actual = Phantom::Crypto::Transactions::Builder::buildTransfer("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", 100000000, "", "Secret passphrase");
   Serial.println(actual.type);
 
 
   const auto text = "Computer science is no more about computers than astronomy is about telescopes.";
-  Ark::Crypto::Utils::Message message;
+  Phantom::Crypto::Utils::Message message;
   message.sign(text, passphrase);
   Serial.println(BytesToHex(message.signature).c_str());
 }

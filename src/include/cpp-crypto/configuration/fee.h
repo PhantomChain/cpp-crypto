@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,11 +12,11 @@
 
 #include "enums/types.h"
 #include "enums/fees.h"
-using namespace Ark::Crypto::Enums;
+using namespace Phantom::Crypto::Enums;
 
 #include <cstdint>
 
-namespace Ark {
+namespace Phantom {
 namespace Crypto {
 namespace Configuration {
 /**

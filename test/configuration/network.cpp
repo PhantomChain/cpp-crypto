@@ -1,6 +1,6 @@
 
 #include "gtest/gtest.h"
-#include "arkCrypto.h"
+#include "phantomCrypto.h"
 
 TEST(configuration, network_get)
 {

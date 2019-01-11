@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,7 +10,7 @@
 #include "identities/wif.h"
 
 /**/
-Ark::Crypto::Identities::WIF::WIF(const char *const newWIFStr)
+Phantom::Crypto::Identities::WIF::WIF(const char *const newWIFStr)
 { 
     (std::strlen(newWIFStr) == WIF_SIZE)
         ? void(std::memmove(
@@ -22,18 +22,18 @@ Ark::Crypto::Identities::WIF::WIF(const char *const newWIFStr)
 /**/
 
 /**/
-Ark::Crypto::Identities::WIF::WIF(const uint8_t *newWIFBytes)
+Phantom::Crypto::Identities::WIF::WIF(const uint8_t *newWIFBytes)
 {
     std::memmove(this->bytes_, newWIFBytes, WIF_SIZE);
 }
 /**/
 
 /**/
-const uint8_t* Ark::Crypto::Identities::WIF::toBytes() { return this->bytes_; };
+const uint8_t* Phantom::Crypto::Identities::WIF::toBytes() { return this->bytes_; };
 /**/
 
 /**/
-std::string Ark::Crypto::Identities::WIF::toString() const
+std::string Phantom::Crypto::Identities::WIF::toString() const
 {
     return std::string(this->bytes_, this->bytes_ + WIF_SIZE);
 }
@@ -47,7 +47,7 @@ std::string Ark::Crypto::Identities::WIF::toString() const
  *
  * @return WIF
  **/
-Ark::Crypto::Identities::WIF Ark::Crypto::Identities::WIF::fromPassphrase(
+Phantom::Crypto::Identities::WIF Phantom::Crypto::Identities::WIF::fromPassphrase(
         const char *const passphrase,
         uint8_t wifByte
 ) {

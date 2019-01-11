@@ -8,7 +8,7 @@
 #include <sstream>
 #include <cmath>
 
-namespace Ark {
+namespace Phantom {
 namespace Crypto {
 namespace Utils {
 

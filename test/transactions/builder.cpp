@@ -3,13 +3,13 @@
 #include "configuration/fee.h"
 #include "enums/types.h"
 #include "transactions/builder.h"
-using namespace Ark::Crypto::Transactions;
+using namespace Phantom::Crypto::Transactions;
 
 TEST(transactions, build_transfer)
 {
-    const auto actual = Ark::Crypto::Transactions::Builder::buildTransfer("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", 100000000, "", "Secret passphrase");
-    ASSERT_EQ(Ark::Crypto::Enums::Types::TRANSFER, actual.type);
-    ASSERT_TRUE(Ark::Crypto::Configuration::Fee().get(Ark::Crypto::Enums::Types::TRANSFER) == actual.fee);
+    const auto actual = Phantom::Crypto::Transactions::Builder::buildTransfer("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", 100000000, "", "Secret passphrase");
+    ASSERT_EQ(Phantom::Crypto::Enums::Types::TRANSFER, actual.type);
+    ASSERT_TRUE(Phantom::Crypto::Configuration::Fee().get(Phantom::Crypto::Enums::Types::TRANSFER) == actual.fee);
     ASSERT_STREQ("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", actual.recipientId.c_str());
     ASSERT_TRUE(100000000 == actual.amount);
     ASSERT_STREQ("", actual.vendorField.c_str());

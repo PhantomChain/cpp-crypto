@@ -1,11 +1,11 @@
 {
-  "name": "Ark-Cpp-Crypto",
-  "keywords": "ark ecosystem, crypto, blockchain, arduino",
-  "description": "Cpp Wrapper for the Ark Ecosystem",
-  "homepage": "https://github.com/ArkEcosystem/Cpp-Crypto",
+  "name": "Phantom-Cpp-Crypto",
+  "keywords": "phantom, phantomchain, crypto, blockchain, arduino",
+  "description": "Cpp Wrapper for the PhantomChain",
+  "homepage": "https://github.com/PhantomChain/Cpp-Crypto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArkEcosystem/Cpp-Crypto.git"
+    "url": "https://github.com/PhantomChain/Cpp-Crypto.git"
   },
   "version": "0.1.0",
   "authors": [

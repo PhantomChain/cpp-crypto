@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# This file is part of Ark Cpp Crypto.
+# This file is part of Phantom Cpp Crypto.
 #
-# (c) Ark Ecosystem <info@ark.io>
+# (c) PhantomChain <info@phantom.org>
 #
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
@@ -10,7 +10,7 @@
 # This script extends support to the Arduino IDE.
 #
 # The Arduino IDE doesn't support extending its search path outside of the 'src' folder.
-# The Ark Cpp-Crypto SDK exposes its public interface via the 'include' folder.
+# The Phantom Cpp-Crypto SDK exposes its public interface via the 'include' folder.
 #
 # This script moves the headers from 'include' into their relative directories in the 'src' folder;
 # it then delete the 'include' folder.
@@ -85,8 +85,8 @@ fi
 if [[ -d ${INCLUDE_DIR} ]]; then
   # This will run if headers are in the 'include' directory tree.
   echo -e "****************************************\n"
-  echo -e "Moving 'arkCrypto.h' to 'src' directory.\n"
-  mv ${INCLUDE_CRYPTO_DIR}/arkCrypto.h ${SRC_DIR}
+  echo -e "Moving 'phantomCrypto.h' to 'src' directory.\n"
+  mv ${INCLUDE_CRYPTO_DIR}/phantomCrypto.h ${SRC_DIR}
   sleep 1
 
   echo -e "Moving 'configuration' headers.\n"
@@ -171,8 +171,8 @@ else
   mkdir ${INCLUDE_TRANSACTIONS_DIR}
   sleep 1
 
-  echo -e "Moving 'arkCrypto.h' back to the 'include/cpp-crypto/' directory.\n"
-  mv ${SRC_DIR}/arkCrypto.h ${INCLUDE_CRYPTO_DIR}
+  echo -e "Moving 'phantomCrypto.h' back to the 'include/cpp-crypto/' directory.\n"
+  mv ${SRC_DIR}/phantomCrypto.h ${INCLUDE_CRYPTO_DIR}
   sleep 1
 
   echo -e "Moving 'configuration' headers.\n"

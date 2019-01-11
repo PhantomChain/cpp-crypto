@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,7 @@
  *
  * @return AbstractNetwork
  **/
-Ark::Crypto::Networks::AbstractNetwork Ark::Crypto::Configuration::Network::get()
+Phantom::Crypto::Networks::AbstractNetwork Phantom::Crypto::Configuration::Network::get()
 {
     return (this->network_.getBase58Prefix(BASE58_ADDRESS_P2PKH) == 0x00)
         ? (Devnet)
@@ -27,7 +27,7 @@ Ark::Crypto::Networks::AbstractNetwork Ark::Crypto::Configuration::Network::get(
  *
  * @param AbstractNetwork network
  **/
-void Ark::Crypto::Configuration::Network::set(Ark::Crypto::Networks::AbstractNetwork network)
+void Phantom::Crypto::Configuration::Network::set(Phantom::Crypto::Networks::AbstractNetwork network)
 {
     this->network_ = network;
 };

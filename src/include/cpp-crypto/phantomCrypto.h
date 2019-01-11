@@ -1,14 +1,14 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  **/
 
-#ifndef ARKCRYPTO_H
-#define ARKCRYPTO_H
+#ifndef PHANTOMCRYPTO_H
+#define PHANTOMCRYPTO_H
 
 #define HAS_CRYPTO
 
@@ -40,10 +40,10 @@
 #include "utils/message.h"
 #include "utils/slot.h"
 
-using namespace Ark::Crypto::Configuration;
-using namespace Ark::Crypto::Enums;
-using namespace Ark::Crypto::Identities;
-using namespace Ark::Crypto::Networks;
-using namespace Ark::Crypto::Transactions;
+using namespace Phantom::Crypto::Configuration;
+using namespace Phantom::Crypto::Enums;
+using namespace Phantom::Crypto::Identities;
+using namespace Phantom::Crypto::Networks;
+using namespace Phantom::Crypto::Transactions;
 
 #endif

@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 
 #include "identities/privatekey.h"
-using namespace Ark::Crypto::Identities;
+using namespace Phantom::Crypto::Identities;
 
 namespace {
     const auto passphrase = "bullet parade snow bacon mutual deposit brass floor staff list concert ask";

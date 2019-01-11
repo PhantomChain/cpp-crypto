@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,7 +12,7 @@
 /**
  * 
  **/
-Ark::Crypto::Identities::PrivateKey::PrivateKey(const char *const newPrivateKeyStr)
+Phantom::Crypto::Identities::PrivateKey::PrivateKey(const char *const newPrivateKeyStr)
 {
     memmove(this->bytes_, &HexToBytes(newPrivateKeyStr).data()[0], PRIVATEKEY_SIZE);    
 }
@@ -21,7 +21,7 @@ Ark::Crypto::Identities::PrivateKey::PrivateKey(const char *const newPrivateKeyS
 /**
  * 
  **/
-Ark::Crypto::Identities::PrivateKey::PrivateKey(const uint8_t *newPrivateKeyBytes)
+Phantom::Crypto::Identities::PrivateKey::PrivateKey(const uint8_t *newPrivateKeyBytes)
 {
     memmove(this->bytes_, newPrivateKeyBytes, PRIVATEKEY_SIZE);
 }
@@ -30,13 +30,13 @@ Ark::Crypto::Identities::PrivateKey::PrivateKey(const uint8_t *newPrivateKeyByte
 /**
  * 
  **/
-const uint8_t *Ark::Crypto::Identities::PrivateKey::toBytes() { return this->bytes_; };
+const uint8_t *Phantom::Crypto::Identities::PrivateKey::toBytes() { return this->bytes_; };
 /**/
 
 /**
  * 
  **/
-std::string Ark::Crypto::Identities::PrivateKey::toString() const
+std::string Phantom::Crypto::Identities::PrivateKey::toString() const
 {
     return BytesToHex(this->bytes_, this->bytes_ + PRIVATEKEY_SIZE);
 }
@@ -49,7 +49,7 @@ std::string Ark::Crypto::Identities::PrivateKey::toString() const
  *
  * @return std::string
  **/
-Ark::Crypto::Identities::PrivateKey Ark::Crypto::Identities::PrivateKey::fromPassphrase(const char* const passphrase)
+Phantom::Crypto::Identities::PrivateKey Phantom::Crypto::Identities::PrivateKey::fromPassphrase(const char* const passphrase)
 {    
     std::vector<uint8_t> privateKey(PRIVATEKEY_SIZE);
     auto hash = Sha256::getHash(reinterpret_cast<const unsigned char*>(passphrase), strlen(passphrase));
@@ -65,7 +65,7 @@ Ark::Crypto::Identities::PrivateKey Ark::Crypto::Identities::PrivateKey::fromPas
  *
  * @return PrivateKey
  **/
-Ark::Crypto::Identities::PrivateKey Ark::Crypto::Identities::PrivateKey::fromHex(const char *const privateKey) { return { privateKey }; }
+Phantom::Crypto::Identities::PrivateKey Phantom::Crypto::Identities::PrivateKey::fromHex(const char *const privateKey) { return { privateKey }; }
 /**/
 
 /**
@@ -76,7 +76,7 @@ Ark::Crypto::Identities::PrivateKey Ark::Crypto::Identities::PrivateKey::fromHex
  *
  * @return PrivateKey
  **/
-Ark::Crypto::Identities::PrivateKey Ark::Crypto::Identities::PrivateKey::fromWIFString(const char* wifStr, uint8_t wifByte)
+Phantom::Crypto::Identities::PrivateKey Phantom::Crypto::Identities::PrivateKey::fromWIFString(const char* wifStr, uint8_t wifByte)
 {
     Uint256 bigNum;
     bool compressed = true;
@@ -95,7 +95,7 @@ Ark::Crypto::Identities::PrivateKey Ark::Crypto::Identities::PrivateKey::fromWIF
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::PrivateKey::validate(PrivateKey privateKey) { return PrivateKey::validate(privateKey.toString().c_str()); };
+bool Phantom::Crypto::Identities::PrivateKey::validate(PrivateKey privateKey) { return PrivateKey::validate(privateKey.toString().c_str()); };
 /**/
 
 /**
@@ -105,7 +105,7 @@ bool Ark::Crypto::Identities::PrivateKey::validate(PrivateKey privateKey) { retu
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::PrivateKey::validate(const char *privateKeyStr)
+bool Phantom::Crypto::Identities::PrivateKey::validate(const char *privateKeyStr)
 {
     return ((strlen(privateKeyStr)/2) == PRIVATEKEY_SIZE); // check length
 }
@@ -118,7 +118,7 @@ bool Ark::Crypto::Identities::PrivateKey::validate(const char *privateKeyStr)
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::PrivateKey::validate(const uint8_t *privateKeyBytes)
+bool Phantom::Crypto::Identities::PrivateKey::validate(const uint8_t *privateKeyBytes)
 {
     return validate(PrivateKey(privateKeyBytes));
 }

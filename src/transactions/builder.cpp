@@ -6,7 +6,7 @@
 #include "identities/address.h"
 #include "enums/types.h"
 
-namespace Ark {
+namespace Phantom {
 namespace Crypto {
 namespace Transactions {
 

@@ -8,7 +8,7 @@
 #include <iterator>
 #include <algorithm>
 
-namespace Ark {
+namespace Phantom {
 namespace Crypto {
 namespace Transactions {
 

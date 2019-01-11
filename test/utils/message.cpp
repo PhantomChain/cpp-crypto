@@ -15,7 +15,7 @@ namespace {
 
 TEST(utils, message_sign)
 {
-    Ark::Crypto::Utils::Message message;
+    Phantom::Crypto::Utils::Message message;
 
     message.sign(text, passphrase);
 
@@ -25,7 +25,7 @@ TEST(utils, message_sign)
 
 TEST(utils, message_to_array)
 {
-    Ark::Crypto::Utils::Message message;
+    Phantom::Crypto::Utils::Message message;
 
     message.sign(text, passphrase);
 
@@ -43,7 +43,7 @@ TEST(utils, message_to_array)
 
 TEST(utils, message_to_json)
 {
-    Ark::Crypto::Utils::Message message;
+    Phantom::Crypto::Utils::Message message;
 
     message.sign(text, passphrase);
 
@@ -52,7 +52,7 @@ TEST(utils, message_to_json)
 
 TEST(utils, message_to_string)
 {
-    Ark::Crypto::Utils::Message message;
+    Phantom::Crypto::Utils::Message message;
 
     message.sign(text, passphrase);
 
@@ -64,7 +64,7 @@ TEST(utils, message_verify)
     PublicKey publicKey = PublicKey::fromHex(expectedPublicKey);
     std::vector<uint8_t> signature = HexToBytes(expectedSignature);
 
-    Ark::Crypto::Utils::Message message(
+    Phantom::Crypto::Utils::Message message(
         text,
         publicKey,
         signature

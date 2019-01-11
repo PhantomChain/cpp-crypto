@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2.2)
 
-project(Ark-Cpp-Crypto-tests C CXX)
+project(Phantom-Cpp-Crypto-tests C CXX)
 
 set(BUILD_GMOCK OFF FORCE)
 
@@ -39,18 +39,18 @@ set (TEST_SRC
 	${PROJECT_SOURCE_DIR}/utils/slot.cpp
 )
 
-find_library(Ark-Cpp-Crypto-tests PUBLIC)
+find_library(Phantom-Cpp-Crypto-tests PUBLIC)
 
-add_executable(Ark-Cpp-Crypto-tests ${TEST_SRC})
+add_executable(Phantom-Cpp-Crypto-tests ${TEST_SRC})
 
-target_link_libraries(Ark-Cpp-Crypto-tests Ark-Cpp-Crypto-lib gtest gtest_main)
+target_link_libraries(Phantom-Cpp-Crypto-tests Phantom-Cpp-Crypto-lib gtest gtest_main)
 
-add_test(NAME test COMMAND Ark-Cpp-Crypto-tests)
+add_test(NAME test COMMAND Phantom-Cpp-Crypto-tests)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
     include("${CMAKE_SOURCE_DIR}/cmake/CodeCoverage.cmake")
 
-    setup_target_for_coverage(${PROJECT_NAME}_coverage Ark-Cpp-Crypto-tests coverage)
+    setup_target_for_coverage(${PROJECT_NAME}_coverage Phantom-Cpp-Crypto-tests coverage)
 
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")

@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "networks/mainnet.h"
-using namespace Ark::Crypto::Networks;
+using namespace Phantom::Crypto::Networks;
 
 TEST(networks, mainnet_base58_prefix_get)
 {

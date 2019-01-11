@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,7 @@
  * @param Base58PrefixType prefix
  * @return uint8_t
  **/
-uint8_t Ark::Crypto::Networks::AbstractNetwork::getBase58Prefix(Base58PrefixType base58Prefix) const
+uint8_t Phantom::Crypto::Networks::AbstractNetwork::getBase58Prefix(Base58PrefixType base58Prefix) const
 {
     switch (base58Prefix) {
         case 0: return this->base58_.ADDRESS_P2PKH;
@@ -32,7 +32,7 @@ uint8_t Ark::Crypto::Networks::AbstractNetwork::getBase58Prefix(Base58PrefixType
  * @param Base58PrefixType prefix
  * @param uint8_t newByte
  **/
-void Ark::Crypto::Networks::AbstractNetwork::setBase58Prefix(Base58PrefixType base58Prefix, uint8_t newByte)
+void Phantom::Crypto::Networks::AbstractNetwork::setBase58Prefix(Base58PrefixType base58Prefix, uint8_t newByte)
 {
     if (!isLocked_) {
         switch (base58Prefix) {
@@ -50,7 +50,7 @@ void Ark::Crypto::Networks::AbstractNetwork::setBase58Prefix(Base58PrefixType ba
  * @param Base58PrefixType prefix
  * @return long
  **/
-long Ark::Crypto::Networks::AbstractNetwork::getBIP32Prefix(BIP32PrefixType bip32Prefix) const
+long Phantom::Crypto::Networks::AbstractNetwork::getBIP32Prefix(BIP32PrefixType bip32Prefix) const
 {
      return (bip32Prefix == 0) ? this->bip32_.PREFIX_XPUB : this->bip32_.PREFIX_XPRV;
 }
@@ -62,7 +62,7 @@ long Ark::Crypto::Networks::AbstractNetwork::getBIP32Prefix(BIP32PrefixType bip3
  * @param BIP32PrefixType prefix
  * @param long newByte
  **/
-void Ark::Crypto::Networks::AbstractNetwork::setBIP32Prefix(BIP32PrefixType bip32Prefix, long newByte)
+void Phantom::Crypto::Networks::AbstractNetwork::setBIP32Prefix(BIP32PrefixType bip32Prefix, long newByte)
 {
     if (!isLocked_) {
         switch (bip32Prefix) {
@@ -78,7 +78,7 @@ void Ark::Crypto::Networks::AbstractNetwork::setBIP32Prefix(BIP32PrefixType bip3
  *
  * @return const char*
  **/
-bool Ark::Crypto::Networks::AbstractNetwork::isLocked() const { return this->isLocked_; }
+bool Phantom::Crypto::Networks::AbstractNetwork::isLocked() const { return this->isLocked_; }
 /**/
 
 /**
@@ -86,7 +86,7 @@ bool Ark::Crypto::Networks::AbstractNetwork::isLocked() const { return this->isL
  *
  * @return const char*
  **/
-const char* Ark::Crypto::Networks::AbstractNetwork::epoch() const { return this->epoch_; }
+const char* Phantom::Crypto::Networks::AbstractNetwork::epoch() const { return this->epoch_; }
 /**/
 
 /**
@@ -94,5 +94,5 @@ const char* Ark::Crypto::Networks::AbstractNetwork::epoch() const { return this-
  *
  * @return int
  **/
-uint8_t Ark::Crypto::Networks::AbstractNetwork::version() const { return uint8_t(base58_.ADDRESS_P2PKH); }
+uint8_t Phantom::Crypto::Networks::AbstractNetwork::version() const { return uint8_t(base58_.ADDRESS_P2PKH); }
 /**/

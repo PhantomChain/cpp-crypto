@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,7 @@
  * 
  * @param: const char *const newAddressStr
  **/
-Ark::Crypto::Identities::Address::Address(const char *const newAddressStr)
+Phantom::Crypto::Identities::Address::Address(const char *const newAddressStr)
 { 
     (strlen(newAddressStr) == ADDRESS_LENGTH)
         ? void(memmove(this->bytes_, reinterpret_cast<const unsigned char*>(newAddressStr), ADDRESS_LENGTH))
@@ -22,7 +22,7 @@ Ark::Crypto::Identities::Address::Address(const char *const newAddressStr)
 }
 /**/
 
-Ark::Crypto::Identities::Address::Address(const uint8_t *newAddressBytes)
+Phantom::Crypto::Identities::Address::Address(const uint8_t *newAddressBytes)
 { 
     memmove(this->bytes_, newAddressBytes, ADDRESS_LENGTH);   
 }
@@ -33,7 +33,7 @@ Ark::Crypto::Identities::Address::Address(const uint8_t *newAddressBytes)
  * 
  * @return const uint8_t
  **/
-const uint8_t *Ark::Crypto::Identities::Address::toBytes()
+const uint8_t *Phantom::Crypto::Identities::Address::toBytes()
 {
     return this->bytes_;
 }
@@ -42,7 +42,7 @@ const uint8_t *Ark::Crypto::Identities::Address::toBytes()
 /**
  * @brief: returns std::string representation of stored bytes
  **/
-std::string Ark::Crypto::Identities::Address::toString() const
+std::string Phantom::Crypto::Identities::Address::toString() const
 {
     return std::string(this->bytes_, this->bytes_ + ADDRESS_LENGTH);
 }
@@ -56,7 +56,7 @@ std::string Ark::Crypto::Identities::Address::toString() const
  *
  * @return Address
  **/
-Ark::Crypto::Identities::Address Ark::Crypto::Identities::Address::fromPassphrase(
+Phantom::Crypto::Identities::Address Phantom::Crypto::Identities::Address::fromPassphrase(
         const char *const passphrase,
         uint8_t networkVersion
 ) {
@@ -73,7 +73,7 @@ Ark::Crypto::Identities::Address Ark::Crypto::Identities::Address::fromPassphras
  *
  * @return Address
  **/
-Ark::Crypto::Identities::Address Ark::Crypto::Identities::Address::fromPrivateKey(
+Phantom::Crypto::Identities::Address Phantom::Crypto::Identities::Address::fromPrivateKey(
         PrivateKey privateKey,
         uint8_t networkVersion
 ) {
@@ -90,7 +90,7 @@ Ark::Crypto::Identities::Address Ark::Crypto::Identities::Address::fromPrivateKe
  *
  * @return Address
  **/
-Ark::Crypto::Identities::Address Ark::Crypto::Identities::Address::fromPublicKey(
+Phantom::Crypto::Identities::Address Phantom::Crypto::Identities::Address::fromPublicKey(
     PublicKey publicKey,
     uint8_t networkVersion
 ) {
@@ -110,7 +110,7 @@ Ark::Crypto::Identities::Address Ark::Crypto::Identities::Address::fromPublicKey
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::Address::validate(
+bool Phantom::Crypto::Identities::Address::validate(
         Address address,
         uint8_t networkVersion
 ) {
@@ -129,7 +129,7 @@ bool Ark::Crypto::Identities::Address::validate(
  * 
  * @return bool
  **/
-bool Ark::Crypto::Identities::Address::validate(
+bool Phantom::Crypto::Identities::Address::validate(
         const char *const addressStr,
         uint8_t networkVersion
 ) {
@@ -145,7 +145,7 @@ bool Ark::Crypto::Identities::Address::validate(
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::Address::validate(
+bool Phantom::Crypto::Identities::Address::validate(
         const uint8_t *addressBytes,
         uint8_t networkVersion
 ) {
@@ -160,7 +160,7 @@ bool Ark::Crypto::Identities::Address::validate(
  *
  * @return std::string
  **/
-std::string Ark::Crypto::Identities::Address::base58encode(const uint8_t* source) {
+std::string Phantom::Crypto::Identities::Address::base58encode(const uint8_t* source) {
   // Magic numbers from Base58Check::pubkeyHashToBase58Check
   uint8_t temp[21 + 4] = {};
   char out[ADDRESS_LENGTH + 1] = {};
@@ -180,7 +180,7 @@ std::string Ark::Crypto::Identities::Address::base58encode(const uint8_t* source
  *
  * @return std::vector<uint8_t>
  **/
-std::vector<uint8_t> Ark::Crypto::Identities::Address::bytesFromBase58Check(const char* const address) {
+std::vector<uint8_t> Phantom::Crypto::Identities::Address::bytesFromBase58Check(const char* const address) {
     std::vector<std::uint8_t> recipientIdBytes;
     recipientIdBytes.resize(Ripemd160::HASH_LEN);
     uint8_t version = 0;

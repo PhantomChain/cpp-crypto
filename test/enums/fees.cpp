@@ -4,7 +4,7 @@
 
 TEST(enums, fees)
 {
-    Ark::Crypto::Enums::Fees fees;
+    Phantom::Crypto::Enums::Fees fees;
     
     auto feeZERO = fees.TRANSFER;
     ASSERT_TRUE(10000000 == feeZERO);

@@ -1,4 +1,4 @@
-#include "arkCrypto.h"
+#include "phantomCrypto.h"
 
 #include <iostream>
 #include <string>
@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
   const auto passphrase = "viable weasel wage promote praise inflict jaguar tackle color unusual exclude direct";
 
   // Message - sign
-  Ark::Crypto::Utils::Message message;
+  Phantom::Crypto::Utils::Message message;
   message.sign(text, passphrase);
 
   std::cout << "Message\n";
@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
   auto publicKey = PublicKey::fromHex("0275776018638e5c40f1b922901e96cac2caa734585ef302b4a2801ee9a338a456");
   auto signature = HexToBytes("3044022021704f2adb2e4a10a3ddc1d7d64552b8061c05f6d12a168c69091c75581d611402200edf37689d2786fc690af9f0f6fa1f629c95695039f648a6d455484302402e93");
 
-  message = Ark::Crypto::Utils::Message(
+  message = Phantom::Crypto::Utils::Message(
     text,
     publicKey,
     signature
@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
   std::cout << '\n';
 
   // Mnemonic
-  const auto new_passphrase = Ark::Crypto::Identities::Mnemonic::generate();
+  const auto new_passphrase = Phantom::Crypto::Identities::Mnemonic::generate();
   std::cout << "Generated Mnemonic: " << new_passphrase << '\n';
   std::cout << '\n';
 

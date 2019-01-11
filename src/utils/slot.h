@@ -1,12 +1,12 @@
-#ifndef ARK_UTILITIES_SLOTS_H
-#define ARK_UTILITIES_SLOTS_H
+#ifndef PHANTOM_UTILITIES_SLOTS_H
+#define PHANTOM_UTILITIES_SLOTS_H
 
 #include "configuration/network.h"
 
 #include <cstdint>
 #include <chrono>
 
-namespace Ark {
+namespace Phantom {
 namespace Crypto {
 namespace Utils {
 

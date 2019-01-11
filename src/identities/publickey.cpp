@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Crypto.
+ * This file is part of Phantom Cpp Crypto.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,7 +12,7 @@
 /**
  * 
  **/
-Ark::Crypto::Identities::PublicKey::PublicKey(const char *const newPublicKeyStr)
+Phantom::Crypto::Identities::PublicKey::PublicKey(const char *const newPublicKeyStr)
 { 
     memmove(this->bytes_, &HexToBytes(newPublicKeyStr).data()[0], COMPRESSED_PUBLICKEY_SIZE);
 }
@@ -21,7 +21,7 @@ Ark::Crypto::Identities::PublicKey::PublicKey(const char *const newPublicKeyStr)
 /**
  * 
  **/
-Ark::Crypto::Identities::PublicKey::PublicKey(const uint8_t *newPublicKeyBytes)
+Phantom::Crypto::Identities::PublicKey::PublicKey(const uint8_t *newPublicKeyBytes)
 { 
     memmove(this->bytes_, newPublicKeyBytes, COMPRESSED_PUBLICKEY_SIZE);
 }
@@ -30,19 +30,19 @@ Ark::Crypto::Identities::PublicKey::PublicKey(const uint8_t *newPublicKeyBytes)
 /**
  * 
  **/
-const uint8_t *Ark::Crypto::Identities::PublicKey::toBytes() { return this->bytes_; }
+const uint8_t *Phantom::Crypto::Identities::PublicKey::toBytes() { return this->bytes_; }
 /**/
 
 /**
  * 
  **/
-bool Ark::Crypto::Identities::PublicKey::isValid() { return PublicKey::validate(*this); }
+bool Phantom::Crypto::Identities::PublicKey::isValid() { return PublicKey::validate(*this); }
 /**/
 
 /**
  * 
  **/
-std::string Ark::Crypto::Identities::PublicKey::toString() const
+std::string Phantom::Crypto::Identities::PublicKey::toString() const
 {
     return BytesToHex(this->bytes_, this->bytes_ + COMPRESSED_PUBLICKEY_SIZE);
 }
@@ -55,7 +55,7 @@ std::string Ark::Crypto::Identities::PublicKey::toString() const
  *
  * @return std::string
  **/
-Ark::Crypto::Identities::PublicKey Ark::Crypto::Identities::PublicKey::fromPassphrase(const char *const passphrase)
+Phantom::Crypto::Identities::PublicKey Phantom::Crypto::Identities::PublicKey::fromPassphrase(const char *const passphrase)
 {
     PrivateKey privateKey = PrivateKey::fromPassphrase(passphrase);
     return PublicKey::fromPrivateKey(privateKey);
@@ -65,7 +65,7 @@ Ark::Crypto::Identities::PublicKey Ark::Crypto::Identities::PublicKey::fromPassp
 /**
  * 
  **/
-Ark::Crypto::Identities::PublicKey Ark::Crypto::Identities::PublicKey::fromPrivateKey(PrivateKey privateKey)
+Phantom::Crypto::Identities::PublicKey Phantom::Crypto::Identities::PublicKey::fromPrivateKey(PrivateKey privateKey)
 {
     std::vector<uint8_t> publicKey(COMPRESSED_PUBLICKEY_SIZE);
     const struct uECC_Curve_t * curve = uECC_secp256k1();
@@ -88,7 +88,7 @@ Ark::Crypto::Identities::PublicKey Ark::Crypto::Identities::PublicKey::fromPriva
  *
  * @return PublicKey
  **/
-Ark::Crypto::Identities::PublicKey Ark::Crypto::Identities::PublicKey::fromHex(const char *const publicKey) { return { publicKey }; };
+Phantom::Crypto::Identities::PublicKey Phantom::Crypto::Identities::PublicKey::fromHex(const char *const publicKey) { return { publicKey }; };
 /**/
 
 /**
@@ -98,7 +98,7 @@ Ark::Crypto::Identities::PublicKey Ark::Crypto::Identities::PublicKey::fromHex(c
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::PublicKey::validate(PublicKey publicKey)
+bool Phantom::Crypto::Identities::PublicKey::validate(PublicKey publicKey)
 {
     auto publicKeyBytes = publicKey.toBytes(); // compressed publicKey bytes (uint8_t*)
     uint8_t uncompressedPublicKey[64] = {}; // create uncompressed publicKey buffer (uint8_t[64])
@@ -115,7 +115,7 @@ bool Ark::Crypto::Identities::PublicKey::validate(PublicKey publicKey)
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::PublicKey::validate(const char *publicKeyStr)
+bool Phantom::Crypto::Identities::PublicKey::validate(const char *publicKeyStr)
 {
     return validate(PublicKey(publicKeyStr));
 }
@@ -128,7 +128,7 @@ bool Ark::Crypto::Identities::PublicKey::validate(const char *publicKeyStr)
  *
  * @return bool
  **/
-bool Ark::Crypto::Identities::PublicKey::validate(const uint8_t *publicKeyBytes)
+bool Phantom::Crypto::Identities::PublicKey::validate(const uint8_t *publicKeyBytes)
 {
     return validate(PublicKey(publicKeyBytes));
 }

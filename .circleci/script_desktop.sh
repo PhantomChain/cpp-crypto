@@ -9,4 +9,4 @@ cmake --build .
 
 # run Gtest
 cd ../../
-./test/Ark-Cpp-Crypto-tests
+./test/Phantom-Cpp-Crypto-tests

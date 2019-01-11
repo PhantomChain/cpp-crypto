@@ -10,7 +10,7 @@
 #include <cassert>
 
 
-void cryptoSign(Sha256Hash hash, Ark::Crypto::Identities::PrivateKey privateKey, std::vector<uint8_t>& signature)
+void cryptoSign(Sha256Hash hash, Phantom::Crypto::Identities::PrivateKey privateKey, std::vector<uint8_t>& signature)
 {
   Uint256 r;
   Uint256 s;
@@ -30,7 +30,7 @@ void cryptoSign(Sha256Hash hash, Ark::Crypto::Identities::PrivateKey privateKey,
   encodeDER(toDER(r_der), toDER(s_der), signature);
 }
 
-bool cryptoVerify(Ark::Crypto::Identities::PublicKey publicKey, Sha256Hash hash, std::vector<uint8_t>& signature)
+bool cryptoVerify(Phantom::Crypto::Identities::PublicKey publicKey, Sha256Hash hash, std::vector<uint8_t>& signature)
 {
   /* Get the Uncompressed PublicKey */
   auto publicKeyBytes = publicKey.toBytes(); // compressed publicKey bytes (uint8_t*)
